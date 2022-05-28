@@ -1,0 +1,56 @@
+{
+  "name": "antd-mobile-template",
+  "version": "0.0.1",
+  "author": "rambn",
+  "description": "基于umi@3.x + antd-mobile v5.x",
+  "private": true,
+  "scripts": {
+    "analyze": "cross-env ANALYZE=1 umi build",
+    "start": "umi dev",
+    "start:prod": "cross-env UMI_ENV=prod umi dev",
+    "build": "cross-env UMI_ENV=dev umi build",
+    "build:prod": "cross-env UMI_ENV=prod umi build",
+    "postinstall": "umi generate tmp",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "fabric verify-commit"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/pro-layout": "^6.5.0",
+    "antd-mobile": "^5.12.6",
+    "classnames": "^2.3.1",
+    "react": "17.x",
+    "react-dom": "17.x",
+    "umi": "^3.5.24",
+    "vconsole": "^3.14.6"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@umijs/fabric": "^2.10.0",
+    "@umijs/plugin-esbuild": "^1.4.1",
+    "@umijs/preset-react": "2.x",
+    "@umijs/test": "^3.5.24",
+    "cross-env": "^7.0.3",
+    "lint-staged": "^12.4.1",
+    "postcss-px-to-viewport": "^1.1.1",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.4",
+    "yorkie": "^2.0.0"
+  }
+}
